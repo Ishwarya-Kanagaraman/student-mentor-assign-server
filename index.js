@@ -106,6 +106,9 @@ app.use(express.json());
 //   }
 
 // })
+app.get('/',async(req,res)=>{
+    res.send("welcome to node app!!!!")
+})
 app.use('/',studentRouter);
 app.use('/',mentorRouter);
 
