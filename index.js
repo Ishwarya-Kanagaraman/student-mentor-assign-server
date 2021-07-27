@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import { studentRouter } from "./routes/students.js";
 import { mentorRouter } from "./routes/mentors.js";
 // import { Students } from "./models/student.js";
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT || 3001;
 
 // opened connection to db
 
