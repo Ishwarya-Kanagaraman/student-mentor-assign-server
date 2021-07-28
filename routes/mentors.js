@@ -23,7 +23,7 @@ router
   
     try {
       const newMentor = await mentor.save();
-      respone.send({newMentor, message:"Added successfully"});
+      respone.send({newMentor, message:" Created and Added successfully"});
     } catch (err) {
       respone.status(500);
       respone.send(err);
@@ -48,47 +48,47 @@ router
 //       console.log(err);
 //     }
 //   })
-  // to delete mentors by Id
-  // .delete(async(request,response)=>{
-  //   const {name}=request.params;
-  //   console.log("id of student to be removed",name);
+//   // to delete mentors by Id
+//   .delete(async(request,response)=>{
+//     const {name}=request.params;
+//     console.log("id of student to be removed",name);
    
-  //   try{
-  //     const mentor = await Mentors.findOne({name:RegExp(name,"i")});
-  //     console.log("student to be removed",mentor)
-  //     await mentor.remove();
-  //     response.send({mentor,message:'deleted successfully!'})
-  //   }
-  //   catch(err){
-  //     response.send(err);
-  //     console.log(err);
-  //   }
-  // })
-  // .patch(async (request,response)=>{
-  //   const {name}=request.params;
-  //    const {email,mentorId}=request.body;
-  //   // console.log(id);
-  //   try {
-  //     // const student = await Students.find({name:name});
-  //     const findmentor = await Mentors.findOne({name:name});
-  //   // if(name){
-  //   //   mentor.name=nameOfMentor;
-  //   // }
-  //   if(email){
-  //     findmentor.email=email;
-  //   }
-  //   if(mentorId){
-  //       findmentor.mentorId=mentorId;
-  //     }
-  //   await findmentor.save();
-  //     response.send({findmentor,message:"Updated successfully"});
-  //     console.log(mentor);
-  //   } catch (err) {
-  //     response.send(err);
-  //     console.log(err);
-  //   }
+//     try{
+//       const mentor = await Mentors.findOne({name:RegExp(name,"i")});
+//       console.log("student to be removed",mentor)
+//       await mentor.remove();
+//       response.send({mentor,message:'deleted successfully!'})
+//     }
+//     catch(err){
+//       response.send(err);
+//       console.log(err);
+//     }
+//   })
+//   .patch(async (request,response)=>{
+//     const {name}=request.params;
+//      const {email,mentorId}=request.body;
+//     // console.log(id);
+//     try {
+//       // const student = await Students.find({name:name});
+//       const findmentor = await Mentors.findOne({name:name});
+//     // if(name){
+//     //   mentor.name=nameOfMentor;
+//     // }
+//     if(email){
+//       findmentor.email=email;
+//     }
+//     if(mentorId){
+//         findmentor.mentorId=mentorId;
+//       }
+//     await findmentor.save();
+//       response.send({findmentor,message:"Updated successfully"});
+//       console.log(mentor);
+//     } catch (err) {
+//       response.send(err);
+//       console.log(err);
+//     }
   
-  // })
+//   })
   // app.use('/mentors',mentorRouter);
   
 export const mentorRouter = router;
