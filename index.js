@@ -1,5 +1,5 @@
 // import dotenv.config from dotenv
-
+import cors from "cors";
 import express from "express";
 const app = express();
 // const router=express.Router();
@@ -21,7 +21,7 @@ con.on("open", () => console.log("MongoDB is connected"));
 
 // middleware
 app.use(express.json());
-
+app.use(cors());
 app.get("/", async (req, res) => {
   res.send("welcome to node app!!!!");
 });
