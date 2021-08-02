@@ -74,9 +74,9 @@ router
   // to assign the mentor to student tested 100%
   router.route("/students/assign-mentor")
   .post(async (request,response)=>{
-    const {name,mentorId}=request.body;
+    const {id,mentorId}=request.body;
     try{
-       const student=await Students.findOne({name:name});
+       const student=await Students.findById({_id:id});
        if(student){
          student.mentorId=mentorId;
        }
@@ -118,13 +118,13 @@ router
   })
   // app.use('/students',studentRouter);
   // tested find-by-mentor 100%
-  router.route("/students/find-by-mentor/:mentorId")
-  .get(async(request,response)=>{
-    const {mentorId}=request.params;
+  router.route("/students/find-by-mentor/")
+  .post(async(request,response)=>{
+    const {mentorId}=request.body;
 
     try{
     
-       const students=await Students.find({mentorId:mentorId})
+       const students=await Students.findOne({mentorId:mentorId})
        if(students){
          response.send(students);
        }
