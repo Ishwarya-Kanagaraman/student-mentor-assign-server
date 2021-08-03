@@ -74,6 +74,7 @@ router
   // to assign the mentor to student tested 100%
   router.route("/students/assign-mentor")
   .post(async (request,response)=>{
+    // const {id}=request.params;
     const {id,mentorId}=request.body;
     try{
        const student=await Students.findById({_id:id});
@@ -124,7 +125,7 @@ router
 
     try{
     
-       const students=await Students.findOne({mentorId:mentorId})
+       const students=await Students.find({mentorId:mentorId})
        if(students){
          response.send(students);
        }
